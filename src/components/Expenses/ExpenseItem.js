@@ -4,8 +4,11 @@ import Card from "../UI/Card";
 import React, { useState } from "react";
 
 const ExpenseItem = (props) => {
-  const [title,setTitle] = useState('Initial Title');
-  
+  console.log("props in the item", props);
+  const [title, setTitle] = useState(
+    props?.expense?.title ? props.expense.title : "Initial Title"
+  );
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.expense.date} />
